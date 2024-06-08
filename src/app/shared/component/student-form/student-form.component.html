@@ -1,0 +1,30 @@
+
+<div class="card mt-4">
+    <div class="card-body">
+        <form [formGroup]="studentform" (ngSubmit)="onsubmit()">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" formControlName="fname" id="fname" class="form-control">
+              
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" formControlName="lname" id="lname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" formControlName="contact" id="contact" class="form-control">
+            </div>
+            <button class="btn btn-primary mr-2" type="submit" *ngIf="!iseditstudent">
+                add student
+            </button>
+            <button class="btn btn-primary" type="button" *ngIf="iseditstudent" (click)="onupdatestdin()">
+                update student
+            </button>
+        </form>
+    </div>
+</div>

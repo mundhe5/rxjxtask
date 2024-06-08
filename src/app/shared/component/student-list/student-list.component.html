@@ -1,0 +1,39 @@
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="stuarray.length > 0 ; else studentnot">
+            <thead>
+                <tr>
+                    <th>sr no</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Edit</th>
+                    <th>Delet</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let std of stuarray ; let i=index">
+                    <td>{{i + 1}}</td>
+                    <td>{{std.fname}}</td>
+                    <td>{{std.lname}}</td>
+                    <td>{{std.email}}</td>
+                    <td>{{std.contact}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="onedit(std)">
+                                Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="ondelet(std)">
+                                Delete
+                        </button>
+                    </td>
+                 </tr>
+            </tbody>
+    </table>
+
+    <ng-template  #studentnot>
+            <p class="alert alert-danger"> student information is not present</p>
+    </ng-template>
+</div>

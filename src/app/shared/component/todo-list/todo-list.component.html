@@ -1,0 +1,19 @@
+
+<ul class="list-group" *ngIf="todoarraylist.length > 0 ; else listisnot">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoarraylist">
+
+        <span>
+            {{todo.todoname}}
+        </span>
+        <span>
+            <button class="btn btn-primary mr-2" (click)="onedit(todo)"> Edit</button>
+            <button class="btn btn-danger" (click)="ondelet(todo)"> Delet</button>
+        </span>
+       
+    </li>
+</ul>
+<ng-template #listisnot>
+    <p class="alert alert-danger">
+            todo list is not added 
+    </p>
+</ng-template>
